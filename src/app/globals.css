@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+:root {
+  /* Core Theme Colors */
+  --background: #050505;
+  --foreground: #ededed;
+
+  /* Solar8 Purple Theme */
+  --solar-primary: #8B5CF6;
+  /* Electric Violet */
+  --solar-secondary: #D946EF;
+  /* Magenta */
+
+  --solar-card-bg: #0D0D12;
+  --solar-border: #1F1B2E;
+  --solar-glass: rgba(139, 92, 246, 0.05);
+  /* Tinted with violet */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-solar-primary: var(--solar-primary);
+  --color-solar-secondary: var(--solar-secondary);
+  --color-solar-card-bg: var(--solar-card-bg);
+  --color-solar-border: var(--solar-border);
+  --color-solar-glass: var(--solar-glass);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --blur-glass: 12px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-solar-card-bg border border-solar-border backdrop-blur-xl;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  }
+}
